@@ -1,0 +1,35 @@
+while True:
+    print("\nMENU")
+    print("1. Numero a codigo maya")
+    print("2. Numero a binario")
+    print("3. Salir")
+
+    opcion = input("Elige una opcion: ")
+
+    if opcion == "1":
+        numero = int(input("Ingresa un numero: "))
+
+        print("Codigo maya:")
+
+        while numero > 0:
+            residuo = numero % 20
+
+            barras = residuo // 5
+            puntos = residuo % 5
+
+            print("Nivel:", end=" ")
+            print("-" * barras + "." * puntos)
+
+            numero = numero // 20
+
+    elif opcion == "2":
+        numero = int(input("Ingresa un numero: "))
+        print("Binario:", bin(numero)[2:])
+
+    elif opcion == "3":
+        print("Adios")
+        break
+
+    else:
+        print("Opcion incorrecta")
+            
