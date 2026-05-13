@@ -1,0 +1,66 @@
+dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+
+niveles_azucar = [130, 160, 95, 175, 160]     
+niveles_sal = [2000, 2400, 1800, 2400, 2700]  
+presion = [115, 130, 110, 125, 175]           
+
+total_azucar = 0
+total_sal = 0
+total_presion = 0
+
+print("===== REPORTE SEMANAL DE SALUD =====\n")
+
+for i in range(len(dias)):
+    print(f"--- {dias[i]} ---")
+
+    azucar = niveles_azucar[i]
+    sal = niveles_sal[i]
+    presion_sistolica = presion[i]
+
+    total_azucar += azucar
+    total_sal += sal
+    total_presion += presion_sistolica
+
+    if 70 <= azucar <= 140:
+        print("Azúcar: Normal")
+    else:
+        print("Azúcar: Fuera de rango")
+
+    if sal <= 2300:
+        print("Sal: Normal")
+    else:
+        print("Sal: Consumo elevado")
+
+    if presion_sistolica < 120:
+        print("Presión: Normal")
+    elif 120 <= presion_sistolica <= 129:
+        print("Presión: Elevada")
+    elif 130 <= presion_sistolica <= 139:
+        print("Presión: Hipertensión Etapa 1")
+    else:
+        print("Presión: Hipertensión Etapa 2")
+
+    print()
+
+prom_azucar = total_azucar / len(dias)
+prom_sal = total_sal / len(dias)
+prom_presion = total_presion / len(dias)
+
+print("===== PROMEDIOS SEMANALES =====")
+print("Promedio de Azúcar:", round(prom_azucar, 2), "mg/dL")
+print("Promedio de Sal:", round(prom_sal, 2), "mg")
+print("Promedio de Presión Sistólica:", round(prom_presion, 2), "mmHg")
+
+print("\n===== EVALUACIÓN GENERAL =====")
+
+if 70 <= prom_azucar <= 140:
+    print("Azúcar semanal: Dentro del rango saludable")
+else:
+    print("Azúcar semanal: Fuera del rango")
+
+if prom_sal <= 2300:
+    print("Sal semanal: Dentro del rango saludable")
+else:
+    print("Sal semanal: Fuera del rango saludable")
+
+print("Programa finalizado.")
