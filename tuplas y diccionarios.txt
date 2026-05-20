@@ -1,0 +1,51 @@
+# TUPLAS
+
+# Las tuplas almacenan varios datos
+# y no pueden modificarse.
+
+datos_estudiante = ("Carlos", 18, "Programación")
+
+print("TUPLA:")
+print(datos_estudiante)
+print("Curso:", datos_estudiante[2])
+
+print("\n=========================\n")
+
+# DICCIONARIOS
+# Los diccionarios guardan información
+# usando una clave y un valor.
+
+producto = {
+    "nombre": "Laptop",
+    "precio": 4500,
+    "marca": "HP"
+}
+
+print("DICCIONARIO ORIGINAL:")
+print(producto)
+
+print("\n=========================\n")
+
+
+producto["cantidad"] = 10
+
+print("DESPUÉS DE INSERTAR:")
+print(producto)
+
+print("\n=========================\n")
+
+# MODIFICAR DATOS
+
+producto["precio"] = 5000
+
+print("DESPUÉS DE MODIFICAR:")
+print(producto)
+
+print("\n=========================\n")
+
+# ELIMINAR DATOS
+
+del producto["marca"]
+
+print("DESPUÉS DE ELIMINAR:")
+print(producto)
